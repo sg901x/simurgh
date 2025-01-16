@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../portal/portal.html">Portal</a></li>
+                
+                <!-- Dropdown for Master -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/master-perusahaan.html">Perusahaan</a></li>
+                        <li><a href="../usermanagement/master-posisijabatan.html">Posisi Jabatan</a></li>
+                        <li><a href="../usermanagement/master-divisi.html">Divisi</a></li>
+                        <li><a href="../usermanagement/master-department.html">Department</a></li>
+                        <li><a href="../usermanagement/master-jabatan.html">Jabatan</a></li>
+                        <li><a href="../usermanagement/master-role.html">Role</a></li>
+                        <li><a href="../usermanagement/master-user.html">User</a></li>
+                    </ul>
+                </li>
+    
+                <!-- Dropdown for Transaksi -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Transaksi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/transaksi-delegasi.html">Delegasi</a></li>
+                        <li><a href="../usermanagement/transaksi-hirarkijabatan.html">Hirarki Jabatan</a></li>
+                        <li><a href="../usermanagement/transaksi-pemindahantask.html">Pemindahan Task</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <div class="detail-container" th:object="${authorDetail}">
+                <h3>
+                    <a href="../usermanagement/master-perusahaan.html"> Master Perusahaan </a> > <a href="../usermanagement/master-perusahaan-detail.html"> Lihat </a>
+                </h3>
+                <table class="detail-table">
+                    <tbody>
+                        <tr>
+                            <td><label>Kode Perusahaan</label></td>
+                            <td>
+                                <span>INC</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Nama Perusahaan</label></td>
+                            <td>
+                                <span>INDOCYBER</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>NPWP</label></td>
+                            <td>
+                                <span>*********</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Alamat</label></td>
+                            <td>
+                                <span>Jl Daan Mogot</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Kode Pos</label></td>
+                            <td>
+                                <span>12341</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Provinsi</label></td>
+                            <td>
+                                <span>Jakarta</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Email Perusahaan</label></td>
+                            <td>
+                                <span>indocyber@company.com</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Nomor Telepon 1</label></td>
+                            <td>
+                                <span>021212121</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Nomor Telepon 2</label></td>
+                            <td>
+                                <span>0817817817</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Nomor Fax</label></td>
+                            <td>
+                                <span>345678121</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Status</label></td>
+                            <td>
+                                <span>Aktif</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

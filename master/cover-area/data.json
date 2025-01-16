@@ -1,0 +1,56 @@
+{
+    "name": "Delegasi",
+    "tableColumn":[
+        {
+            "name":"Kode Delegasi",
+            "key": "kode"
+        },
+        {
+            "name":"Tanggal Mulai Delegasi",
+            "key": "tanggalMulai"
+        },
+        {
+            "name":"Tanggal Akhir Delegasi",
+            "key": "tanggalAkhir"
+        },
+        {
+            "name":"Dari Pegawai",
+            "key": "dariKaryawan"
+        },
+        {
+            "name":"Kepada Karyawan",
+            "key": "kepadaKaryawan"
+        },
+        {
+            "name":"Status Persetujuan",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode":"D001",
+            "tanggalMulai":"2021-01-01",
+            "tanggalAkhir":"2021-01-31",
+            "dariKaryawan":"Alex A",
+            "kepadaKaryawan":"John Doe B",
+            "status":"Diajukan"
+        },
+        {
+            "kode":"D002",
+            "tanggalMulai":"2021-02-01",
+            "tanggalAkhir":"2021-02-28",
+            "dariKaryawan":"Bob C",
+            "kepadaKaryawan":"Jane Doe D",
+            "status":"Diterima"
+        },
+        {
+            "kode":"D003",
+            "tanggalMulai":"2021-03-01",
+            "tanggalAkhir":"2021-03-31",
+            "dariKaryawan":"Charlie E",
+            "kepadaKaryawan":"Michael Doe F",
+            "status":"Ditolak"
+        }
+
+    ]
+}

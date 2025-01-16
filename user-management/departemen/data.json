@@ -1,0 +1,33 @@
+{
+    "name": "Departemen",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Departemen",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Departemen",
+            "key": "name"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode": "BDM",
+            "name": "Branch Daan Mogot",
+            "Status": "Aktif"
+        },
+        {
+            "kode": "BBT",
+            "name": "Branch Tebet",
+            "Status": "Aktif"
+        }
+    ]
+}

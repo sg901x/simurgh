@@ -1,0 +1,31 @@
+{
+    "name": "Perusahaan",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Perusahaan",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Perusahaan",
+            "key": "name"
+        },
+        {
+            "name":"Alamat",
+            "key": "address"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [{
+        "kode": "COM001",
+        "name": "PT. Finance Company",
+        "address": "Jl. Surya Kencana KM.13",
+        "Status": "Aktif"
+    }]
+}

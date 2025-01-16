@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/portal.html">Portal</a></li>
+                
+                <!-- Dropdown for Master -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/master-perusahaan.html">Perusahaan</a></li>
+                        <li><a href="../usermanagement/master-posisijabatan.html">Posisi Jabatan</a></li>
+                        <li><a href="../usermanagement/master-divisi.html">Divisi</a></li>
+                        <li><a href="../usermanagement/master-department.html">Department</a></li>
+                        <li><a href="../usermanagement/master-jabatan.html">Jabatan</a></li>
+                        <li><a href="../usermanagement/master-role.html">Role</a></li>
+                        <li><a href="../usermanagement/master-user.html">User</a></li>
+                    </ul>
+                </li>
+    
+                <!-- Dropdown for Transaksi -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Transaksi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/transaksi-delegasi.html">Delegasi</a></li>
+                        <li><a href="../usermanagement/transaksi-hirarkijabatan.html">Hirarki Jabatan</a></li>
+                        <li><a href="../usermanagement/transaksi-pemindahantask.html">Pemindahan Task</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <div class="table-container">
+                <h3>
+                    <a href="../usermanagement/master-perusahaan.html"> Master Perusahaan </a>
+                </h3>
+                <a class="black-button create-button" href="master-perusahaan-form.html">
+                    Tambah
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                </a>
+                <form method="get" class="filter" th:action="@{/prospect}">
+                    <input type="text" id="nama" name="nama" placeholder="Nama Perusahaan" th:attr="value=${nama}">
+                    <input type="text" placeholder="&#xf002;  Nama Tabel">
+                    <button class="filter-button" type="submit">
+                        Search
+                    </button>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Kode Perusahaan</th>
+                            <th>Nama Perusahaan</th>
+                            <th>Alamat</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="action">
+                                <a href="master-perusahaan-form.html" class="action-button update-button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> edit
+                                </a>
+                                <a href="master-perusahaan-delete.html" class="action-button delete-button">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> delete
+                                </a>
+                                <a class="action-button detail-button" href="../usermanagement/master-perusahaan-detail.html">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
+                                </a>
+                            </td>
+                            <td>1</td>
+                            <td>Indocyber</td>
+                            <td>Kebon Jeruk</td>
+                            <td>Aktif</td>
+                        </tr>
+                        <tr>
+                            <td class="action">
+                                <a href="master-perusahaan-form.html" class="action-button update-button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> edit
+                                </a>
+                                <a href="master-perusahaan-delete.html" class="action-button delete-button">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> delete
+                                </a>
+                                <a class="action-button detail-button" href="../usermanagement/master-perusahaan-detail.html">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
+                                </a>
+                            </td>
+                            <td>2</td>
+                            <td>Cerdas</td>
+                            <td>Kebon Karet</td>
+                            <td>Aktif</td>
+                        </tr>
+                        <tr>
+                            <td class="action">
+                                <a href="master-perusahaan-form.html" class="action-button update-button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> edit
+                                </a>
+                                <a href="master-perusahaan-delete.html" class="action-button delete-button">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> delete
+                                </a>
+                                <a class="action-button detail-button" href="../usermanagement/master-perusahaan-detail.html">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
+                                </a>
+                            </td>
+                            <td>3</td>
+                            <td>Chelsea</td>
+                            <td>Kebon London</td>
+                            <td>Aktif</td>
+                        </tr>
+                        <tr>
+                            <td class="action">
+                                <a href="master-perusahaan-form.html" class="action-button update-button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> edit
+                                </a>
+                                <a href="master-perusahaan-delete.html" class="action-button delete-button">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> delete
+                                </a>
+                                <a class="action-button detail-button" href="../usermanagement/master-perusahaan-detail.html">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
+                                </a>
+                            </td>
+                            <td>4</td>
+                            <td>Comika</td>
+                            <td>Kebon Pisang</td>
+                            <td>Aktif</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <div class="pagination" th:if="${numberOfPages} != 0">
+                                    <div>
+                                        <button>&laquo;</button>
+                                        <button>&lt;</button>
+                                        <span>Page 1 of 30</span>
+                                        <button>&gt;</button>
+                                        <button>&raquo;</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

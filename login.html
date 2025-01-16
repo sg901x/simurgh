@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+<!--    <link rel="icon" type="image/png" href="../image/asuransi.png"/>-->
+    <link rel="stylesheet" href="../../static/css/style-login.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+<!--    <script src="../../js/script.js" defer></script>-->
+</head>
+<body>
+<div class="login-container">
+    <div>
+        <h2>Simurgh</h2>
+        <h3>Demo System</h3>
+    </div>
+    <form action="../portal/portal.html">
+        <h4>Login</h4>
+        <label for="account">Account</label>
+        <input type="text" id="account" name="account" placeholder="Enter your username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <a href="../portal/portal.html">
+            <button type="submit">Submit</button>
+        </a>
+        <a href="login-password.html">
+            <button type="">Lupa Password</button>
+        </a>
+    </form>
+</div>
+</body>
+</html>

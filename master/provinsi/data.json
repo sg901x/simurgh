@@ -1,0 +1,43 @@
+{
+    "name": "Provinsi",
+    "tableColumn":[
+        {
+            "name":"Kode Provinsi",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Provinsi",
+            "key": "name"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "id": "1",
+            "kode": "11",
+            "name": "Aceh",
+            "status": "Aktif"
+        },
+        {
+            "id": "2",
+            "kode": "12",
+            "name": "Sumatera Utara",
+            "status": "Aktif"
+        },
+        {
+            "id": "3",
+            "kode": "13",
+            "name": "Sumatera Barat",
+            "status": "Aktif"
+        },
+        {
+            "id": "4",
+            "kode": "14",
+            "name": "Riau",
+            "status": "Aktif"
+        }
+    ]
+}

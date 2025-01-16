@@ -1,0 +1,643 @@
+/* CSS Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2, h3{
+    margin: 5px;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 20px 30px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Container for Sidebar and Main Content */
+.container {
+    display: flex;
+    position: relative;
+    margin-top: 60px; 
+}
+/* Sidebar Styling */
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 90px; 
+    left: 0;
+    width: 200px;
+    background-color: #f4f4f4;
+    height: calc(100vh - 60px); 
+    padding-top: 15px;
+    border-right: 1px solid #ddd;
+    font-size: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional box-shadow for sidebar */
+}
+
+/* Sidebar List Styling */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+    text-decoration: none;
+    border: #000 solid 1.5px;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for sidebar links */
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Dropdown Styles */
+.sidebar .dropdown {
+    position: relative;
+}
+
+/* Make dropdown items bold and increase font weight */
+.sidebar .dropdown .dropdown-toggle {
+    cursor: pointer;
+    display: block;
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+    border-radius: 10px;
+    margin: 0;
+    font-weight: bold; /* Bold the dropdown toggle text */
+    display: flex;
+    justify-content: space-between; /* Align text and arrow */
+    align-items: center;
+}
+
+/* Add a right-facing arrow to the dropdown toggle */
+.sidebar .dropdown .dropdown-toggle:after {
+    content: '\2192'; /* Unicode for right arrow */
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px; /* Space between text and arrow */
+    transition: transform 0.3s ease;
+}
+
+/* Change the arrow direction when dropdown is open */
+.sidebar .dropdown:hover .dropdown-toggle:after {
+    transform: rotate(90deg); /* Rotate the arrow */
+}
+
+/* Initially hide the dropdown menu */
+.sidebar .dropdown-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Dropdown Items */
+.sidebar .dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.sidebar .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 8px;
+    font-weight: normal; /* Regular weight for links */
+}
+
+.sidebar .dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown on hover */
+.sidebar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Optional: Add a background color for hover effect on the dropdown toggle */
+.sidebar .dropdown:hover .dropdown-toggle {
+    background-color: #ddd;
+}
+
+
+/* Main Content Styling */
+main {
+    margin-left: 220px;
+    margin-top: 40px; 
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.menu-button {
+    display: block;
+    width: 200px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: #45a049;
+}
+
+/* Container Tabel */
+
+.table-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.5); /* Set background to be semi-transparent */
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter input[type="text"],
+select {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: transparent;
+    color: black;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.filter input::placeholder{
+    color: #a3a3a3;
+}
+
+button.filter-button {
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button.filter-button:hover {
+    background-color: black;
+    color: white;
+}
+
+a.black-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+a.black-button:hover {
+    background-color: black;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+thead th {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1); /* Light transparent background for header */
+    color: black;
+}
+
+tbody td {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+tfoot td {
+    padding: 10px;
+    border: none;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.pagination a {
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+}
+
+.pagination a:hover {
+    background-color: black;
+    color: white;
+}
+
+.action {
+    min-width: 205px;
+}
+.action-button {
+    padding: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+    margin-right: 3px;
+    font-size: 13px;
+}
+
+.action-button:hover {
+    background-color: black;
+    color: white;
+}
+
+i {
+    margin-left: 5px;
+}
+
+/*Link*/
+.table-container h3, .detail-container h3, .form-container h3, .delete-container h3{
+    padding-bottom: 15px;
+}
+
+.table-container h3 a, .detail-container h3 a, .form-container h3 a, .delete-container h3 a {
+    color: #000;
+    text-decoration: none;
+}
+/* Detail Container Styles */
+.detail-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Breadcrumb Navigation Styling */
+h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+h3 a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+h3 a:hover {
+    text-decoration: underline;
+}
+
+/* Detail Table Styling */
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.detail-table td {
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    vertical-align: middle;
+}
+
+.detail-table label {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.detail-table span {
+    color: #333;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* Hover Effect for Table Rows */
+.detail-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* General Form Container */
+.form-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.5); /* Set background to be semi-transparent */
+}
+
+/* Form Container */
+.upsert-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    max-width: 100%; /* Ensures responsiveness */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Table Styles */
+.upsert-form table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.upsert-form table td {
+    padding: 12px 10px;
+    font-size: 14px;
+    vertical-align: middle;
+    border: none; /* No border on the table itself */
+}
+
+/* Label Styles */
+.label-nama {
+    font-weight: bold;
+    color: #000; /* Black color for labels */
+}
+
+/* Input and Select Styles */
+.upsert-form input[type="text"],
+.upsert-form input[type="date"],
+.upsert-form input[type="email"],
+.upsert-form input[type="tel"],
+.upsert-form input[type="number"],
+.upsert-form input[type="file"],
+.upsert-form textarea,
+.upsert-form select {
+    width: 100%;
+    min-height: 35px;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    font-size: 14px;
+    color: #333;
+    background-color: rgba(240, 240, 240, 0.7); /* Slightly transparent background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+    font-family: 'Font Awesome 5 Free'; 
+    font-weight: 900;
+}
+
+.upsert-form input::placeholder,
+.upsert-form textarea::placeholder,
+.upsert-form select::placeholder {
+    color: #b4b4b4;
+}
+
+.upsert-form input[type="text"]:focus,
+.upsert-form input[type="date"]:focus,
+.upsert-form input[type="email"]:focus,
+.upsert-form input[type="tel"]:focus,
+.upsert-form input[type="number"]:focus,
+.upsert-form input[type="file"]:focus,
+.upsert-form textarea:focus,
+.upsert-form select:focus {
+    border-color: #000; /* Black border on focus */
+    background-color: #fff; /* White background on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Readonly input styling */
+.upsert-form input[readonly],
+.upsert-form textarea[readonly],
+.upsert-form select[readonly] {
+    background-color: #bababa; /* Latar belakang abu-abu terang */
+    color: #000000; /* Teks gelap untuk kontras */
+    border: 1px solid #000000; /* Warna border netral */
+    cursor: not-allowed; /* Tanda kursor "tidak diizinkan" */
+    opacity: 0.7; /* Mengurangi opacity agar terlihat tidak bisa diedit */
+}
+
+/* Optional: Mengubah border saat readonly difokuskan */
+.upsert-form input[readonly]:focus,
+.upsert-form textarea[readonly]:focus,
+.upsert-form select[readonly]:focus {
+    border-color: #888; /* Warna border lebih gelap saat difokuskan */
+    background-color: #f0f0f0; /* Tetap dengan latar belakang terang */
+}
+
+/* Textarea Styles */
+.upsert-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.input-box {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.input-box label {
+    margin-right: 40px;
+}
+
+/* Radio Buttons Styles */
+.upsert-form td input[type="radio"] {
+    font-size: 14px;
+}
+
+.upsert-form td input[type="radio"]:focus {
+    border-color: #000; /* Black border on focus */
+}
+
+/* Validation Error Styles */
+.field-validation-error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+/* Submit Button Styles */
+.submit-button {
+    margin-top: 15px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #444; /* Darker black on hover */
+}
+
+/* Input File Button Styles */
+.upsert-form input[type="file"] {
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.upsert-form input[type="file"]:focus {
+    border-color: #000; /* Black border on focus */
+}
+/* Toggle Button Styling */
+.toggle-btn {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between; /* Align text and arrow */
+    align-items: center;
+}
+
+.toggle-btn:hover {
+    background-color: #e3e3e3;
+}
+
+/* Add a right-facing arrow to the dropdown toggle */
+.toggle-btn:after {
+    content: '\2192'; /* Unicode for right arrow */
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px; /* Space between text and arrow */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when the section is open */
+.form-part.open .toggle-btn:after {
+    transform: rotate(90deg); /* Rotate the arrow */
+}
+
+/* Form Part Content Styling */
+.form-content {
+    display: none; /* Hide by default */
+    padding: 10px;
+    background-color: rgba(240, 240, 240, 0.7);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Form Part Section */
+.form-part {
+    margin-bottom: 20px;
+}
+
+/* Add spacing between sections */
+.detail-section {
+    margin-bottom: 20px;
+}
+
+
+
+.delete-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.5); /* Set background to be semi-transparent */
+}
+
+.delete {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background for warning */
+    color: #d9534f; /* Red color for warning */
+    padding: 15px 25px;
+    border: 2px solid #d9534f; /* Red border */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Font Awesome Icon Styles */
+.delete i {
+    font-size: 24px; /* Icon size */
+}
+
+/* Warning Text Styles */
+.warning-text {
+    font-size: 16px;
+    line-height: 1.5;
+}

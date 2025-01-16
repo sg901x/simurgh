@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../portal/portal.html">Portal</a></li>
+                
+                <!-- Dropdown for Master -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/master-perusahaan.html">Perusahaan</a></li>
+                        <li><a href="../usermanagement/master-posisijabatan.html">Posisi Jabatan</a></li>
+                        <li><a href="../usermanagement/master-divisi.html">Divisi</a></li>
+                        <li><a href="../usermanagement/master-department.html">Department</a></li>
+                        <li><a href="../usermanagement/master-jabatan.html">Jabatan</a></li>
+                        <li><a href="../usermanagement/master-role.html">Role</a></li>
+                        <li><a href="../usermanagement/master-user.html">User</a></li>
+                    </ul>
+                </li>
+    
+                <!-- Dropdown for Transaksi -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Transaksi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/transaksi-delegasi.html">Delegasi</a></li>
+                        <li><a href="../usermanagement/transaksi-hirarkijabatan.html">Hirarki Jabatan</a></li>
+                        <li><a href="../usermanagement/transaksi-pemindahantask.html">Pemindahan Task</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <div class="form-container">
+                <h3>
+                    <a href="../usermanagement/master-perusahaan.html"> Master Perusahaan </a> > <a href="../usermanagement/master-perusahaan-form.html"> Tambah/Ubah </a>
+                </h3>
+                <form method="post" class="upsert-form" action="/book-library/insert-update(categoryName=${categoryName})">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label class="label-nama">Kode Perusahaan*</label></td>
+                                <td>
+                                    <input id="kode-perusahaan" name="kode-perusahaan" type="text" required readonly value="INC">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Nama Perusahaan*</label></td>
+                                <td>
+                                    <input id="nama-perusahaan" name="nama-perusahaan" type="text" required value="INDOCYBER  GLOBAL TECH">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Email*</label></td>
+                                <td>
+                                    <input id="email" name="email" type="email" required placeholder="&#xf0e0;   company@email.com">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Nomor Telepon*</label></td>
+                                <td>
+                                    <input id="phone" name="phone" type="tel" required placeholder="&#xf095;   081234567890">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Alamat*</label></td>
+                                <td>
+                                    <textarea id="address" name="address" required placeholder="&#xf015;" rows="4" cols="50"></textarea>
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td><label class="label-nama">Tanggal Bergabung*</label></td>
+                                <td>
+                                    <input id="tanggal" name="tanggal-bergabung" type="text" required placeholder="&#xf133;   1 Januari 2025">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Status*</label></td>
+                                <td class="input-box">
+                                    <input type="radio" name="status" id="status-aktif" value="Aktif" required>
+                                    <label for="status-aktif">Aktif</label>
+                                    <input type="radio" name="status" id="status-tidak-aktif" value="Tidak Aktif" required>
+                                    <label for="status-tidak-aktif">Tidak Aktif</label>
+                                    <div class="field-validation-error" id="error-status"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="submit-button" type="submit">Save</button>
+                </form>            
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+    "name": "User",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"NIK",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Karyawan",
+            "key": "name"
+        },
+        {
+            "name":"Email",
+            "key": "email"
+        },
+        {
+            "name":"Nama Jabatan",
+            "key": "position"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode": "240001",
+            "name": "John Doe",
+            "email": "John.Doe@gmail.com",
+            "position": "Head of Marketing",
+            "Status": "Aktif"
+        },
+        {
+            "kode": "240002",
+            "name": "Jane Doe",
+            "email": "Jane.Doe@gmail.com",
+            "position": "Senior Marketing Manager",
+            "status": "Aktif"
+        }
+    ]
+}

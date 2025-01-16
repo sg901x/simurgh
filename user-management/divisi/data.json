@@ -1,0 +1,33 @@
+{
+    "name": "Divisi",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Divisi",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Divisi",
+            "key": "name"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode": "MKT",
+            "name": "Marketing",
+            "Status": "Aktif"
+        },
+        {
+            "kode": "FNC",
+            "name": "Finance",
+            "Status": "Aktif"
+        }
+    ]
+}

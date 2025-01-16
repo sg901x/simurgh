@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../portal/portal.html">Portal</a></li>
+                
+                <!-- Dropdown for Master -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/master-perusahaan.html">Perusahaan</a></li>
+                        <li><a href="../usermanagement/master-posisijabatan.html">Posisi Jabatan</a></li>
+                        <li><a href="../usermanagement/master-divisi.html">Divisi</a></li>
+                        <li><a href="../usermanagement/master-department.html">Department</a></li>
+                        <li><a href="../usermanagement/master-jabatan.html">Jabatan</a></li>
+                        <li><a href="../usermanagement/master-role.html">Role</a></li>
+                        <li><a href="../usermanagement/master-user.html">User</a></li>
+                    </ul>
+                </li>
+    
+                <!-- Dropdown for Transaksi -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Transaksi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/transaksi-delegasi.html">Delegasi</a></li>
+                        <li><a href="../usermanagement/transaksi-hirarkijabatan.html">Hirarki Jabatan</a></li>
+                        <li><a href="../usermanagement/transaksi-pemindahantask.html">Pemindahan Task</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <div class="form-container">
+                <h3>
+                    <a href="../usermanagement/master-jabatan.html"> Master Jabatan </a> > <a href="../usermanagement/master-jabatan-form.html"> Tambah/Ubah </a>
+                </h3>
+                <form method="post" class="upsert-form" action="/book-library/insert-update(categoryName=${categoryName})">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <div id="part1" class="form-part">
+                        <button type="button" class="toggle-btn" onclick="togglePart('part1')">Data Diri</button>
+                        <div class="form-content">
+                            <table>
+                                <tbody>
+                                    <!-- Divisi (Dropdown) -->
+                                    <tr>
+                                        <td><label class="label-nama">Divisi*</label></td>
+                                        <td>
+                                            <select name="divisi" id="divisi">
+                                                <option value="MKT">MKT</option>
+                                                <option value="HR">HR</option>
+                                                <option value="IT">IT</option>
+                                                <option value="Finance">Finance</option>
+                                            </select>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Kode Department (Text Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Kode Department*</label></td>
+                                        <td>
+                                            <input id="kode-department" name="kode-department" type="text" required readonly value="MKT">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Nama Department (Text Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Nama Department*</label></td>
+                                        <td>
+                                            <input id="nama-department" name="nama-department" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Status (Radio Buttons) -->
+                                    <tr>
+                                        <td><label class="label-nama">Status*</label></td>
+                                        <td class="input-box">
+                                            <input type="radio" name="status" id="status-aktif" value="Aktif" required>
+                                            <label for="status-aktif">Aktif</label>
+                                            <input type="radio" name="status" id="status-tidak-aktif" value="Tidak Aktif" required>
+                                            <label for="status-tidak-aktif">Tidak Aktif</label>
+                                            <div class="field-validation-error" id="error-status"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="part2" class="form-part">
+                        <button type="button" class="toggle-btn" onclick="togglePart('part2')">Perusahaan</button>
+                        <div class="form-content">
+                            <table>
+                                <tbody>
+                                    <!-- Email (Email Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Email*</label></td>
+                                        <td>
+                                            <input id="email" name="email" type="email" required placeholder="&#xf0e0;   company@email.com">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                        
+                                    <!-- Phone Number (Tel Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Telepon*</label></td>
+                                        <td>
+                                            <input id="phone" name="phone" type="tel" required placeholder="&#xf095;   081234567890">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Date (Date Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Tanggal Bergabung*</label></td>
+                                        <td>
+                                            <input id="tanggal" name="tanggal-bergabung" type="text" required placeholder="&#xf133;   1 Januari 2025">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Number (Number Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Jumlah Pegawai*</label></td>
+                                        <td>
+                                            <input id="jumlah-pegawai" name="jumlah-pegawai" type="number" required min="1" max="1000">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Checkbox (Checkbox Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Persetujuan*</label></td>
+                                        <td class="input-box">
+                                            <input type="checkbox" id="agreement" name="agreement" required>
+                                            <label for="agreement">Saya setuju dengan syarat dan ketentuan</label>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- File Upload (File Input) -->
+                                    <tr>
+                                        <td><label class="label-nama">Upload Surat Pengantar</label></td>
+                                        <td>
+                                            <input type="file" id="file" name="file">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <button class="submit-button" type="submit">Save</button>
+                </form>                
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h2>Simurgh</h2>
+            <p>Demo system for Multifinance</p>
+        </div>
+        <div class="name">
+            <h4>John Doe</h4>
+        </div>
+    </div>
+    <section>
+        <div class="sidebar">
+            <div class="menu">
+                
+            </div>
+        </div>
+        <div class="main">
+            <div class="breadcrumbs">
+                <a href="/portal">Portal</a> / Data Pribadi
+            </div>
+            <div class="data-pribadi">
+                <form action="post">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="nik">NIK</label>
+                            <input type="text" name="nik" id="nik" placeholder="NIK" required>
+                        </div>
+                        <div class="col-75">
+                            <label for="nama">Nama</label>
+                            <input type="text" name="nama" id="nama" placeholder="Nama" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="email-eksternal">Email-Eksternal</label>
+                            <input type="email" name="email-eksternal" id="email-eksternal" placeholder="Email-Eksternal" required>
+                        </div>
+                        <div class="col-50">
+                            <label for="nomor-hp">Nomor HP</label>
+                            <input type="text" name="nomor-hp" id="nomor-hp" placeholder="Nomor HP" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit">Ubah Data Pribadi</button>
+                    </div>
+                </form>
+                <form action="post">
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="Akun">Akun</label>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-50">
+                            <label for="password-lama">Password Lama</label>
+                            <input type="password" name="password-lama" id="password-lama" placeholder="Password Lama" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-50">
+                            <label for="password-baru">Password Baru</label>
+                            <input type="password" name="password-baru" id="password-baru" placeholder="Password Baru" required>
+                        </div>
+                        <div class="col-50">
+                            <label for="konfirmasi-password">Konfirmasi Password Baru *</label>
+                            <input type="password" name="konfirmasi-password" id="konfirmasi-password" placeholder="Konfirmasi Password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit">Ubah Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="../../script.js"></script>
+</body>
+</html>

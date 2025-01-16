@@ -1,0 +1,51 @@
+{
+    "name": "Posisi Jabatan",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Task",
+            "key":"kode"
+        },
+        {
+            "name":"Nama Karyawan",
+            "key":"name"
+        },
+        {
+            "name":"Posisi Jabatan",
+            "key":"position"
+        },
+        {
+            "name":"Alasan",
+            "key":"notes"
+        }
+    ],
+    "data": [
+        {
+            "kode":"T001",
+            "name":"John Doe",
+            "position":"Software Engineer",
+            "notes":"Perubahan posisi menjadi Software Engineer"
+        },
+        {
+            "kode":"T002",
+            "name":"Jane Doe",
+            "position":"Project Manager",
+            "notes":"Perubahan posisi menjadi Project Manager"
+        },
+        {
+            "kode":"T003",
+            "name":"Alice Doe",
+            "position":"Team Lead",
+            "notes":"Perubahan posisi menjadi Team Lead"
+        },
+        {
+            "kode":"T004",
+            "name":"Bob Doe",
+            "position":"Senior Software Engineer",
+            "notes":"Perubahan posisi menjadi Senior Software Engineer"
+        }
+    ]
+}

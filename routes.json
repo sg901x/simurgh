@@ -1,0 +1,75 @@
+[
+    {
+        "path": "/user-management",
+        "name": "user-management",
+        "child": [
+            {"path": "/perusahaan","name": "perusahaan"},
+            {"path": "/posisi-jabatan","name": "posisi jabatan"},
+            {"path": "/divisi","name": "divisi"},
+            {"path": "/departemen","name": "departemen"},
+            {"path": "/jabatan","name": "jabatan"},
+            {"path": "/role","name": "role"},
+            {"path": "/user","name": "user"},
+            {"path": "/delegasi","name": "delegasi"},
+            {"path": "/hirarki-jabatan","name": "hirarki jabatan"},
+            {"path": "/pemindahan-task","name": "pemindahan task"}
+        ]
+    },
+    {
+        "path": "/master",
+        "name": "master",
+        "child": [
+            {"path":"/provinsi", "name": "provinsi"},
+            {"path":"/kota-kabupaten", "name": "kota kabupaten"},
+            {"path":"/kecamatan", "name": "kecamatan"},
+            {"path":"/kelurahan", "name": "kelurahan"},
+            {"path":"/dokumen", "name": "dokumen"},
+            {"path":"/dokumen-pengajuan", "name": "dokumen pengajuan"},
+            {"path":"/cabang", "name": "cabang"},
+            {"path":"/cover-area", "name": "cover area"},
+            {"path":"/hari-libur", "name": "hari-libur"},
+            {"path":"/pot", "name": "pot"},
+            {"path":"/merk", "name": "merk"},
+            {"path":"/tipe", "name": "tipe"},
+            {"path":"/model", "name": "model"},
+            {"path":"/jenis", "name": "jenis"},
+            {"path":"/wilayah-harga-pasar", "name": "wilayah harga pasar"},
+            {"path":"/harga-pasar", "name": "harga pasar"},
+            {"path":"/sparepart", "name": "sparepart"},
+            {"path":"/harga-sparepart", "name": "harga sparepart"},
+            {"path":"/product", "name": "product"},
+            {"path":"/warna", "name": "warna"},
+            {"path":"/bank", "name": "bank"},
+            {"path":"/keterangan-aplikasi", "name": "keterangan aplikasi"},
+            {"path":"/identitas", "name": "identitas"},
+            {"path":"/tipe-aplikasi", "name": "tipe aplikasi"},
+            {"path":"/tipe-master", "name": "tipe master"}
+        ]
+    },
+    {
+        "path": "/sales",
+        "name": "sales",
+        "child": [
+            {"path":"/mitra-agen", "name":"mitra agen"},
+            {"path":"/data-leads", "name":"data leads"}
+        ]
+    },
+    {
+        "path": "/survey",
+        "name": "survey",
+        "child": [
+            {"path":"/validasi-survei", "name":"vaildasi survey"},
+            {"path":"/taksasi", "name":"taksasi"}
+        ]
+    },
+    {
+        "path": "/credit",
+        "name": "credit",
+        "child": [
+            {"path:":"/limit-pencairan", "name":"limit pencairan"},
+            {"path:":"/kondisi-non-standar", "name":"kondisi non standar"},
+            {"path:":"/konfirmasi-pencairan", "name":"konfirmasi pencairan"},
+            {"path:":"/pencairan", "name":"pencairan"}
+        ]
+    }
+]

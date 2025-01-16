@@ -1,0 +1,39 @@
+{
+    "name": "Role",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Role",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Role",
+            "key": "name"
+        },
+        {
+            "name":"Jabatan",
+            "position": "name"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode": "THM",
+            "name": "Approval HM",
+            "position": "Head of Marketing",
+            "Status": "Aktif"
+        },
+        {
+            "kode": "RBM",
+            "name": "Approval BM",
+            "position": "Branch Manager",
+            "Status": "Aktif"
+        }
+    ]
+}

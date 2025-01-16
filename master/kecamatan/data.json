@@ -1,0 +1,53 @@
+{
+    "name": "Kecamatan",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Nama Provinsi",
+            "key": "Provinsi"
+        },
+        {
+            "name":"Nama Kabupaten/Kota",
+            "key": "kabupatenKota"
+        },
+        {
+            "name":"Kode Kecamatan",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Kecamatan",
+            "key": "name"
+        },
+        {
+            "name": "Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "Provinsi":"Jawa Tengah",
+            "kabupatenKota":"Kabupaten Semarang",
+            "kode":"3315",
+            "name":"Kec. Bumirejo",
+            "status":"Aktif"
+        },
+        {
+            "Provinsi":"Jawa Tengah",
+            "kabupatenKota":"Kabupaten Semarang",
+            "kode":"3316",
+            "name":"Kec. Gayam",
+            "status":"Aktif"
+        },
+        {
+            "Provinsi":"Jawa Tengah",
+            "kabupatenKota":"Kabupaten Semarang",
+            "kode":"3317",
+            "name":"Kec. Jenar",
+            "status":"Aktif"
+        }
+
+    ]
+}

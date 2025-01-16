@@ -1,0 +1,51 @@
+{
+    "name": "Kota/Kabupaten",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Nama Provinsi",
+            "key": "namaProvinsi"
+        },
+        {
+            "name":"Kode Kota/Kabupaten",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Kota/Kabupaten",
+            "key": "name"
+        },
+        {
+            "name": "Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "namaProvinsi": "Jawa Timur",
+            "kode": "35",
+            "name": "Surabaya",
+            "status": "Aktif"
+        },
+        {
+            "namaProvinsi": "Jawa Timur",
+            "kode": "3523",
+            "name": "Tulungagung",
+            "status": "Aktif"
+        },
+        {
+            "namaProvinsi": "Jawa Timur",
+            "kode": "3524",
+            "name": "Trenggulunan",
+            "status": "Aktif"
+        },
+        {
+            "namaProvinsi": "Jawa Timur",
+            "kode": "3525",
+            "name": "Bantul",
+            "status": "Aktif"
+        }
+    ]
+}

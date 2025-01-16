@@ -1,0 +1,33 @@
+{
+    "name": "Posisi Jabatan",
+    "tableColumn":[
+        {
+            "name":"",
+            "key":""
+        },
+        {
+            "name":"Kode Posisi Jabatan",
+            "key": "kode"
+        },
+        {
+            "name":"Nama Posisi Jabatan",
+            "key": "name"
+        },
+        {
+            "name":"Status",
+            "key": "status"
+        }
+    ],
+    "data": [
+        {
+            "kode": "ST",
+            "name": "Staff",
+            "Status": "Aktif"
+        },
+        {
+            "kode": "SP",
+            "name": "Supervisor",
+            "Status": "Aktif"
+        }
+    ]
+}
