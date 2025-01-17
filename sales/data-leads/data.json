@@ -1,59 +1,63 @@
 {
-    "name": "Delegasi",
+    "name": "Data Leads",
     "tableColumn":[
         {
-            "name":"Kode Delegasi",
-            "key": "kode"
+            "name":"Nomor Data Leads",
+            "key": "nomor"
         },
         {
-            "name":"Tanggal Mulai Delegasi",
-            "key": "tanggalMulai"
+            "name":"Nomor Aplikasi",
+            "key": "nomorApp"
         },
         {
-            "name":"Tanggal Akhir Delegasi",
-            "key": "tanggalAkhir"
+            "name":"Nama Debitur",
+            "key": "debiturName"
         },
         {
-            "name":"Dari Pegawai",
-            "key": "dariKaryawan"
+            "name":"Tipe Aplikasi",
+            "key": "appType"
+        },
+        { 
+            "name":"Keterangan",
+            "key": "keterangan"
         },
         {
-            "name":"Kepada Karyawan",
-            "key": "kepadaKaryawan"
-        },
-        {
-            "name":"Status Persetujuan",
+            "name":"Status",
             "key": "status"
         }
     ],
     "data": [
         {
-            "id": "1",
-            "kode":"D001",
-            "tanggalMulai":"2021-01-01",
-            "tanggalAkhir":"2021-01-31",
-            "dariKaryawan":"Alex A",
-            "kepadaKaryawan":"John Doe B",
-            "status":"Diajukan"
+            "nomor": "1",
+            "nomorApp": "0001",
+            "debiturName": "John Doe",
+            "appType": "Pertanian",
+            "keterangan": "Baru",
+            "status": "Pending"
         },
         {
-            "id": "2",
-            "kode":"D002",
-            "tanggalMulai":"2021-02-01",
-            "tanggalAkhir":"2021-02-28",
-            "dariKaryawan":"Bob C",
-            "kepadaKaryawan":"Jane Doe D",
-            "status":"Diterima"
+            "nomor": "2",
+            "nomorApp": "0002",
+            "debiturName": "Jane Doe",
+            "appType": "Pertanian",
+            "keterangan": "Baru",
+            "status": "Proses"
         },
         {
-            "id": "3",
-            "kode":"D003",
-            "tanggalMulai":"2021-03-01",
-            "tanggalAkhir":"2021-03-31",
-            "dariKaryawan":"Charlie E",
-            "kepadaKaryawan":"Michael Doe F",
-            "status":"Ditolak"
+            "nomor": "3",
+            "nomorApp": "0003",
+            "debiturName": "Michael Doe",
+            "appType": "Pertanian",
+            "keterangan": "Lama",
+            "status": "Selesai"
+        },
+        {
+            "nomor": "4",
+            "nomorApp": "0004",
+            "debiturName": "David Doe",
+            "appType": "Pertanian",
+            "keterangan": "Baru",
+            "status": "Pending"
         }
-
     ]
 }

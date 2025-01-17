@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/portal.html">Portal</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu">
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <h3 class="breadcrumbs">
+            </h3>
+            <div class="form-container">
+                <form method="post" class="upsert-form">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label class="label-nama" for="tipe-struktur">Nama Produk*</label></td>
+                                <td>
+                                    <input class="wider" id="tipe-struktur" name="tipe-struktur" type="text" required>
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Status*</label></td>
+                                <td class="input-box">
+                                    <input type="radio" name="status" id="status-aktif" value="Aktif" required>
+                                    <label for="status-aktif">Aktif</label>
+                                    <input type="radio" name="status" id="status-tidak-aktif" value="Tidak Aktif" required>
+                                    <label for="status-tidak-aktif">Tidak Aktif</label>
+                                    <div class="field-validation-error" id="error-status"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="submit-button" type="submit">Save</button>
+                </form>            
+            </div>
+        </main>
+    </div>
+    <script src="../../static/js/route.js"></script>
+</body>
+</html>

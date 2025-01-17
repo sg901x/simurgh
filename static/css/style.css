@@ -38,16 +38,13 @@ header {
 /* Sidebar Styling */
 /* Sidebar Styling */
 .sidebar {
-    position: fixed;
-    top: 90px; 
-    left: 0;
-    width: 200px;
+    margin-top: 20px;
+    width: 250px;
     background-color: #f4f4f4;
-    height: calc(100vh - 60px); 
+    min-height: 100vh;
     padding-top: 15px;
     border-right: 1px solid #ddd;
     font-size: 15px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional box-shadow for sidebar */
 }
 
 /* Sidebar List Styling */
@@ -65,13 +62,15 @@ header {
 /* Sidebar Links */
 .sidebar ul li a {
     text-decoration: none;
-    border: #000 solid 1.5px;
+    border: #00000029 solid 1.5px;
     color: #333;
     display: block;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 14px;
     transition: background-color 0.3s ease;
+    text-transform: capitalize;
+    
 }
 
 /* Hover effect for sidebar links */
@@ -163,8 +162,7 @@ header {
 
 /* Main Content Styling */
 main {
-    margin-left: 220px;
-    margin-top: 40px; 
+    margin-top: 20px; 
     padding: 20px;
     flex-grow: 1;
 }
@@ -186,13 +184,13 @@ main {
 
 /* Container Tabel */
 
-.table-container {
+.table-container, .form-container{
     width: 100%;
     margin: 20px auto;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid black;
-    background-color: rgba(255, 255, 255, 0.5); /* Set background to be semi-transparent */
+    border: 2px solid rgba(0, 0, 0, 0.092);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .filter {
@@ -204,7 +202,7 @@ main {
 .filter input[type="text"],
 select {
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(179, 179, 179);
     border-radius: 3px;
     background-color: transparent;
     color: black;
@@ -219,7 +217,7 @@ select {
 
 button.filter-button {
     padding: 5px 10px;
-    border: 1px solid black;
+    border: 2px solid rgb(199, 199, 199);
     background-color: transparent;
     color: black;
     cursor: pointer;
@@ -229,12 +227,13 @@ button.filter-button {
 button.filter-button:hover {
     background-color: black;
     color: white;
+    border: 2px solid black;
 }
 
 a.black-button {
     display: inline-block;
     padding: 5px 10px;
-    border: 1px solid black;
+    border: 2px solid rgb(199, 199, 199);
     background-color: transparent;
     color: black;
     text-decoration: none;
@@ -243,6 +242,7 @@ a.black-button {
 }
 
 a.black-button:hover {
+    border: 2px solid black;
     background-color: black;
     color: white;
 }
@@ -254,20 +254,14 @@ table {
 }
 
 thead th {
-    border: 1px solid black;
+    text-align: left;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.1); /* Light transparent background for header */
+    background-color: rgba(0, 0, 0, 0.157);
     color: black;
 }
 
 tbody td {
-    border: 1px solid black;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.124);
 }
 
 tfoot td {
@@ -306,12 +300,13 @@ tfoot td {
     text-decoration: none;
     color: black;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid rgb(149, 149, 149);
     margin-right: 3px;
     font-size: 13px;
 }
 
 .action-button:hover {
+    border: 1px solid black;
     background-color: black;
     color: white;
 }
@@ -343,7 +338,6 @@ i {
 /* Breadcrumb Navigation Styling */
 h3 {
     font-size: 18px;
-    margin-bottom: 20px;
 }
 
 h3 a {
@@ -383,17 +377,7 @@ h3 a:hover {
 
 /* Hover Effect for Table Rows */
 .detail-table tr:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* General Form Container */
-.form-container {
-    width: 100%;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid black;
-    background-color: rgba(255, 255, 255, 0.5); /* Set background to be semi-transparent */
+    background-color: rgba(0, 0, 0, 0.162);
 }
 
 /* Form Container */
@@ -403,7 +387,6 @@ h3 a:hover {
     border-radius: 8px;
     width: 600px;
     max-width: 100%; /* Ensures responsiveness */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -416,11 +399,15 @@ h3 a:hover {
     border: none;
 }
 
+.upsert-form table tr {
+    height: 60px;
+}
+
+
 .upsert-form table td {
-    padding: 12px 10px;
     font-size: 14px;
-    vertical-align: middle;
-    border: none; /* No border on the table itself */
+    vertical-align:middle; 
+    border: none;
 }
 
 /* Label Styles */
@@ -438,13 +425,12 @@ h3 a:hover {
 .upsert-form input[type="file"],
 .upsert-form textarea,
 .upsert-form select {
+    margin-bottom: 10px;
     width: 100%;
-    min-height: 35px;
+    height: 35px;
     padding: 10px;
-    margin: 8px 0 15px 0;
     font-size: 14px;
     color: #333;
-    background-color: rgba(240, 240, 240, 0.7); /* Slightly transparent background */
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border 0.3s ease;
@@ -475,9 +461,8 @@ h3 a:hover {
 .upsert-form input[readonly],
 .upsert-form textarea[readonly],
 .upsert-form select[readonly] {
-    background-color: #bababa; /* Latar belakang abu-abu terang */
+    background-color: #e7e7e794; /* Latar belakang abu-abu terang */
     color: #000000; /* Teks gelap untuk kontras */
-    border: 1px solid #000000; /* Warna border netral */
     cursor: not-allowed; /* Tanda kursor "tidak diizinkan" */
     opacity: 0.7; /* Mengurangi opacity agar terlihat tidak bisa diedit */
 }
@@ -486,8 +471,10 @@ h3 a:hover {
 .upsert-form input[readonly]:focus,
 .upsert-form textarea[readonly]:focus,
 .upsert-form select[readonly]:focus {
-    border-color: #888; /* Warna border lebih gelap saat difokuskan */
-    background-color: #f0f0f0; /* Tetap dengan latar belakang terang */
+    background-color: #c7c6c6; /* Latar belakang abu-abu terang */
+    color: #000000; /* Teks gelap untuk kontras */
+    cursor: not-allowed; /* Tanda kursor "tidak diizinkan" */
+    opacity: 0.7; /* Mengurangi opacity agar terlihat tidak bisa diedit */
 }
 
 /* Textarea Styles */
@@ -497,9 +484,7 @@ h3 a:hover {
 }
 
 .input-box {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .input-box label {
@@ -524,7 +509,6 @@ h3 a:hover {
 
 /* Submit Button Styles */
 .submit-button {
-    margin-top: 15px;
     background-color: #000; /* Black background */
     color: #fff; /* White text */
     padding: 10px 20px;
@@ -588,7 +572,6 @@ h3 a:hover {
     transform: rotate(90deg); /* Rotate the arrow */
 }
 
-/* Form Part Content Styling */
 .form-content {
     display: none; /* Hide by default */
     padding: 10px;
@@ -597,12 +580,10 @@ h3 a:hover {
     margin-top: 10px;
 }
 
-/* Form Part Section */
 .form-part {
     margin-bottom: 20px;
 }
 
-/* Add spacing between sections */
 .detail-section {
     margin-bottom: 20px;
 }
@@ -641,8 +622,6 @@ h3 a:hover {
     font-size: 16px;
     line-height: 1.5;
 }
-
-
 
 /* Sales / Data-Leads / add.html */
 .search-dropdown-container{
@@ -698,4 +677,33 @@ h3 a:hover {
     padding: 6px;
     margin-top: 15px;
     font-weight: bold;
+}
+.breadcrumbs {
+    background-color: #e3e3e3;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.breadcrumbs a {
+    color: rgb(82, 82, 207);
+    text-decoration: none;
+}
+
+h3.breadcrumbs {
+    margin: 0;
+}
+
+.wider {
+    width: 120% !important;
+}
+
+.table-container table tr {
+    height: 50px;
+}
+.table-container table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table-container table td {
+    padding: 5px 10px;
 }
