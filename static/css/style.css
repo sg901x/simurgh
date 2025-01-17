@@ -623,6 +623,61 @@ h3 a:hover {
     line-height: 1.5;
 }
 
+/* Sales / Data-Leads / add.html */
+.search-dropdown-container{
+    position: relative;
+}
+
+.dropdown-search{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-search li{
+    padding: 8px 10px;
+    cursor: pointer;
+  }
+  
+.dropdown-search li:hover{
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+.nomor-identitas-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nomor-identitas-container select{
+    width: 30%;
+}
+
+.nomor-identitas-container input{
+    width: max-content;
+}
+
+.data-produk, .data-unit{
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
 .breadcrumbs {
     background-color: #e3e3e3;
     padding: 10px;
@@ -652,4 +707,3 @@ h3.breadcrumbs {
 .table-container table td {
     padding: 5px 10px;
 }
-

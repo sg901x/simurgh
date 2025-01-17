@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simurgh</title>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Simurgh</h1>
+            <span>Demo Multi Finance</span>
+        </div>
+        <div>Welcome, User</div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="">Portal</a></li>
+                <!-- Dropdown for Master -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Master</a>
+                    <ul class="dropdown-menu-master">
+                    </ul>
+                </li>
+                <!-- Dropdown for Transaksi -->
+                <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Transaksi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../usermanagement/transaksi-delegasi.html">Delegasi</a></li>
+                        <li><a href="../usermanagement/transaksi-hirarkijabatan.html">Hirarki Jabatan</a></li>
+                        <li><a href="../usermanagement/transaksi-pemindahantask.html">Pemindahan Task</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+        </aside>
+        <main>
+            <div class="table-container">
+                <h3 class="breadcrumbs">
+                </h3>
+                <main>
+                    <div class="form-container">
+                        <form method="post" class="upsert-form" action="/book-library/insert-update(categoryName=${categoryName})">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label class="label-nama">Produk*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="produk" name="produk" type="text" required placeholder="&#xf002;">
+                                                <ul id="produk-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tipe Debitur*</label></td>
+                                        <td class="input-box">
+                                            <input type="radio" name="tipe-debitur" id="debitur-perusahaan" value="Perusahaan" required>
+                                            <label for="debitur-perusahaan">Perusahaan</label>
+                                            <input type="radio" name="tipe-debitur" id="debitur-perseorangan" value="Perseorangan" required>
+                                            <label for="debitur-perseorangan">Perseorangan</label>
+                                            <div class="field-validation-error" id="error-status"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tipe Aplikasi*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="tipe-aplikasi" name="tipe-aplikasi" type="text" required placeholder="&#xf002;">
+                                                <ul id="tipe-aplikasi-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nama Depan Debitur*</label></td>
+                                        <td>
+                                            <input id="debitur-first" name="debitur-first" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nama Tengah Debitur</label></td>
+                                        <td>
+                                            <input id="debitur-middle" name="debitur-middle" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>                            
+                                    <tr>
+                                        <td><label class="label-nama">Nama Akhir Debitur</label></td>
+                                        <td>
+                                            <input id="debitur-middle" name="debitur-middle" type="text">
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Identitas*</label></td>
+                                        <td>
+                                            <div class="nomor-identitas-container">
+                                                <select name="jenis-identitas" id="jenis-identitas">
+                                                    <option value="" disabled selected>Pilih</option>
+                                                    <option value="KTP">KTP</option>
+                                                    <option value="Paspor">Paspor</option>
+                                                </select>
+                                                <input type="number" name="nomor-identitas" id="nomor-identitas">
+                                            </div>
+                                            <div class="field-validation-error" id="error-status"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Jenis Kelamin*</label></td>
+                                        <td class="input-box">
+                                            <input type="radio" name="jenis-kelamin" id="jenis-kelamin-l" value="L" required>
+                                            <label for="jenis-kelamin-laki">Laki-Laki</label>
+                                            <input type="radio" name="jenis-kelamin" id="jenis-kelamin-p" value="P" required>
+                                            <label for="jenis-kelamin-p">Perempuan</label>
+                                            <div class="field-validation-error" id="error-status"></div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Alamat Identitas -->
+                                    <tr>
+                                        <td><label class="label-nama">Alamat Identitas*</label></td>
+                                        <td>
+                                            <textarea id="address" name="address" required placeholder="&#xf015;" rows="4" cols="50"></textarea>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kelurahan*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="kelurahan" name="kelurahan" type="text" required placeholder="&#xf002;">
+                                                <ul id="kelurahan-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kode Pos</label></td>
+                                        <td>
+                                            <input id="kode-pos" name="kode-pos" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kecamatan</label></td>
+                                        <td>
+                                            <input id="kecamatan" name="kecamatan" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kota/Kabupaten</label></td>
+                                        <td>
+                                            <input id="kota-kabupaten" name="kota-kabupaten" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Provinsi</label></td>
+                                        <td>
+                                            <input id="provinsi" name="provinsi" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama"></label></td>
+                                        <td class="input-box">
+                                            <input id="alamat-checkbox" name="alamat-checkbox" type="checkbox">Sama Dengan Alamat Identitas</input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Alamat Domisili -->
+                                    <tr>
+                                        <td><label class="label-nama">Alamat Domisili*</label></td>
+                                        <td>
+                                            <textarea id="address-d" name="address-d" required placeholder="&#xf015;" rows="4" cols="50"></textarea>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kelurahan*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="kelurahan-d" name="kelurahan-d" type="text" required placeholder="&#xf002;">
+                                                <ul id="kelurahan-dropdown-d" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kode Pos</label></td>
+                                        <td>
+                                            <input id="kode-pos-d" name="kode-pos-d" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kecamatan</label></td>
+                                        <td>
+                                            <input id="kecamatan-d" name="kecamatan-d" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Kota/Kabupaten</label></td>
+                                        <td>
+                                            <input id="kota-kabupaten-d" name="kota-kabupaten-d" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Provinsi</label></td>
+                                        <td>
+                                            <input id="provinsi-d" name="provinsi-d" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nama Cabang Tujuan</label></td>
+                                        <td>
+                                            <input id="cabang-tujuan" name="cabang-tujuan" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Handphone 1*</label></td>
+                                        <td>
+                                            <input id="no-hp-1" name="no-hp-1" type="number" required></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Handphone 2</label></td>
+                                        <td>
+                                            <input id="no-hp-2" name="no-hp-2" type="number"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Telepon</label></td>
+                                        <td>
+                                            <input id="no-telp" name="no-telp" type="number"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Sumber Data Aplikasi*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="sumber-data-aplikasi" name="sumber-data-aplikasi" type="text" required placeholder="&#xf002;">
+                                                <ul id="sumber-data-aplikasi-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Referensi*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="referensi" name="referensi" type="text" required placeholder="&#xf002;">
+                                                <ul id="referensi-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Jenis Usaha</label></td>
+                                        <td>
+                                            <input id="jenis-usaha" name="jenis-usaha" type="text"></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Keterangan Aplikasi*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="keterangan-aplikasi" name="referensi" type="text" required placeholder="&#xf002;">
+                                                <ul id="keterangan-aplikasi-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nama Surveyor*</label></td>
+                                        <td>
+                                            <input id="nama-surveyor" name="nama-surveyor" type="text" required></input>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Status*</label></td>
+                                        <td class="input-box">
+                                            <input type="radio" name="status" id="status-aktif" value="Aktif" required>
+                                            <label for="status-aktif">Aktif</label>
+                                            <input type="radio" name="status" id="status-tidak-aktif" value="Tidak Aktif" required>
+                                            <label for="status-tidak-aktif">Tidak Aktif</label>
+                                            <div class="field-validation-error" id="error-status"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Data Produk -->
+                             <div class="data-produk">Data Produk</div>
+                             <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label class="label-nama">POT (Payment of Term)</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="pot" name="pot" type="text" required placeholder="&#xf002;">
+                                                <ul id="pot-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tenor</label></td>
+                                        <td>
+                                            <input id="tenor" name="tenor" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Estimasi Nilai Funding</label></td>
+                                        <td>
+                                            <input id="estimasi-nilai-funding" name="estimasi-nilai-funding" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                             </table>
+
+                             <!-- Data Unit -->
+                              <div class="data-unit">Data Unit</div>
+                              <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label class="label-nama">Kategori*</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="kategori" name="kategori" type="text" required placeholder="&#xf002;">
+                                                <ul id="kategori-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Merek</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="merek" name="merek" type="text" required placeholder="&#xf002;">
+                                                <ul id="merek-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tipe</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="tipe" name="tipe" type="text" required placeholder="&#xf002;">
+                                                <ul id="tipe-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Model</label></td>
+                                        <td>
+                                            <div class="search-dropdown-container">
+                                                <input id="model" name="model" type="text" required placeholder="&#xf002;">
+                                                <ul id="model-dropdown" class="dropdown-search hidden">
+                                                    <!-- Dropdown options will be dynamically populated -->
+                                                </ul>
+                                            </div>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tahun</label></td>
+                                        <td>
+                                            <input id="tahun" name="tahun" type="number" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Tahun Pajak STNK</label></td>
+                                        <td>
+                                            <input id="pajak-stnk" name="pajak-stnk" type="number" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor BPKB</label></td>
+                                        <td>
+                                            <input id="bpkb" name="bpkb" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label-nama">Nomor Polisi</label></td>
+                                        <td>
+                                            <input id="nopol" name="nopol" type="text" required>
+                                            <div class="field-validation-error"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                            <button class="submit-button" type="submit">Save</button>
+                        </form>              
+                    </div>
+                </main>
+            </div>
+        </main>
+    </div>
+    <script src="../../static/js/route.js"></script>
+    <script src="../../static/js/data-leads.js"></script>
+</body>
+</html>
