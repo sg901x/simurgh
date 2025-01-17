@@ -2,10 +2,6 @@
     "name": "Kecamatan",
     "tableColumn":[
         {
-            "name":"",
-            "key":""
-        },
-        {
             "name":"Nama Provinsi",
             "key": "Provinsi"
         },
@@ -28,6 +24,7 @@
     ],
     "data": [
         {
+            "id": "1",
             "Provinsi":"Jawa Tengah",
             "kabupatenKota":"Kabupaten Semarang",
             "kode":"3315",
@@ -35,6 +32,7 @@
             "status":"Aktif"
         },
         {
+            "id": "1",
             "Provinsi":"Jawa Tengah",
             "kabupatenKota":"Kabupaten Semarang",
             "kode":"3316",
@@ -42,6 +40,7 @@
             "status":"Aktif"
         },
         {
+            "id": "1",
             "Provinsi":"Jawa Tengah",
             "kabupatenKota":"Kabupaten Semarang",
             "kode":"3317",

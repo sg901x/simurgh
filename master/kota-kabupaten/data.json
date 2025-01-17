@@ -2,10 +2,6 @@
     "name": "Kota/Kabupaten",
     "tableColumn":[
         {
-            "name":"",
-            "key":""
-        },
-        {
             "name":"Nama Provinsi",
             "key": "namaProvinsi"
         },

@@ -1,58 +1,66 @@
 {
-    "name": "Delegasi",
+    "name": "Mitra/Agen",
     "tableColumn":[
         {
-            "name":"Kode Delegasi",
+            "name":"Tipe",
+            "key": "tipe"
+        },
+        {
+            "name":"Kode Mitra/Agen",
             "key": "kode"
         },
         {
-            "name":"Tanggal Mulai Delegasi",
-            "key": "tanggalMulai"
+            "name":"Nama Mitra/Agen",
+            "key": "name"
         },
         {
-            "name":"Tanggal Akhir Delegasi",
-            "key": "tanggalAkhir"
+            "name": "Kelurahan",
+            "key": "kelurahan"
         },
         {
-            "name":"Dari Pegawai",
-            "key": "dariKaryawan"
+            "name": "Cabang",
+            "key": "cabang"
         },
         {
-            "name":"Kepada Karyawan",
-            "key": "kepadaKaryawan"
-        },
-        {
-            "name":"Status Persetujuan",
+            "name": "Status",
             "key": "status"
         }
     ],
     "data": [
+        {   "id": "1",
+            "tipe": "Mitra",
+            "kode": "M001",
+            "name": "Mitra Agen 1",
+            "kelurahan": "Kelurahan 1",
+            "cabang": "Cabang 1",
+            "status": "Aktif"
+        },
         {
             "id": "1",
-            "kode":"D001",
-            "tanggalMulai":"2021-01-01",
-            "tanggalAkhir":"2021-01-31",
-            "dariKaryawan":"Alex A",
-            "kepadaKaryawan":"John Doe B",
-            "status":"Diajukan"
+            "tipe": "Agen",
+            "kode": "A001",
+            "name": "Agen 1",
+            "kelurahan": "Kelurahan 2",
+            "cabang": "Cabang 2",
+            "status": "Aktif"
         },
         {
-            "id": "2",
-            "kode":"D002",
-            "tanggalMulai":"2021-02-01",
-            "tanggalAkhir":"2021-02-28",
-            "dariKaryawan":"Bob C",
-            "kepadaKaryawan":"Jane Doe D",
-            "status":"Diterima"
+            "id": "1",
+            "tipe": "Mitra",
+            "kode": "M002",
+            "name": "Mitra Agen 2",
+            "kelurahan": "Kelurahan 3",
+            "cabang": "Cabang 3",
+            "status": "Non Aktif"
         },
         {
-            "id": "3",
-            "kode":"D003",
-            "tanggalMulai":"2021-03-01",
-            "tanggalAkhir":"2021-03-31",
-            "dariKaryawan":"Charlie E",
-            "kepadaKaryawan":"Michael Doe F",
-            "status":"Ditolak"
+            "id": "1",
+            "tipe": "Agen",
+            "kode": "A002",
+            "name": "Agen 2",
+            "kelurahan": "Kelurahan 4",
+            "cabang": "Cabang 4",
+            "status": "Non Aktif"
         }
 
     ]
