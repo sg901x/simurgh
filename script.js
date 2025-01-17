@@ -54,18 +54,26 @@
         let tbody = document.querySelector('tbody')
         let ths = data.tableColumn.map( col => {
             return `<th>${col.name}</th>`
-    
         })
-        document.querySelector('thead').innerHTML = `<tr>${ths.join('')}</tr>`
-        tbody.innerHTML = data.data.map(d => {
-            return `<tr>
-                <td class="action">
-                    <button>Hapus</button>
-                    <button>Ubah</button>
-                    <button>Lihat</button>
-                </td>
-                ${Object.keys(d).map(key => `<td>${d[key]}</td>`).join('')}
-                </tr>`;
-        }).join('');
+
+        fetch("http://0.tcp.ap.ngrok.io:16391/api/ApplicationDescription/list?id=0&status=true", {
+            method: "POST",
+            body: JSON.stringify({}),
+            headers: {}
+        }).then( res => res.json())
+        .then( data => {
+            console.log(data)
+            document.querySelector('thead').innerHTML = `<tr>${ths.join('')}</tr>`
+            tbody.innerHTML = data.map(d => {
+                return `<tr>
+                    <td class="action">
+                        <button>Hapus</button>
+                        <button>Ubah</button>
+                        <button>Lihat</button>
+                    </td>
+                    ${Object.keys(d).map(key => `<td>${d[key]}</td>`).join('')}
+                    </tr>`;
+            }).join('');
+        })
     })
 })()    

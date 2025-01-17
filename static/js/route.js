@@ -58,22 +58,31 @@
         
             })
             document.querySelector('thead').innerHTML = `<tr>${ths.join('')}</tr>`
-            tbody.innerHTML = data.data.map(d => {
-                return `<tr>
-                    <td class="action" style="width: 20%; text-align: center;">
-                        <a href="edit.html?id=${d.id}" class="action-button update-button">
-                            <i class="fas fa-edit" aria-hidden="true"></i> edit
-                        </a>
-                        <a href="delete.html?id=${d.id}" class="action-button delete-button">
-                            <i class="fa fa-trash" aria-hidden="true"></i> delete
-                        </a>
-                        <a class="action-button detail-button" href="shows.html?id=${d.id}">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
-                        </a>
-                    </td>
-                    ${data.tableColumn.map(key => `<td>${d[key.key]}</td>`).join('')}
-                    </tr>`;
-            }).join('');
+            fetch("http://0.tcp.ap.ngrok.io:16391/api/ApplicationDescription/list?id=0&status=true", {
+                method: "POST",
+                body: JSON.stringify({}),
+                headers: {}
+            }).then( res => res.json())
+            .then( data => {
+                console.log(data)
+                document.querySelector('thead').innerHTML = `<tr>${ths.join('')}</tr>`
+                tbody.innerHTML = data.map(d => {
+                    return `<tr>
+                        <td class="action" style="width: 20%; text-align: center;">
+                            <a href="edit.html?id=${d.id}" class="action-button update-button">
+                                <i class="fas fa-edit" aria-hidden="true"></i> edit
+                            </a>
+                            <a href="delete.html?id=${d.id}" class="action-button delete-button">
+                                <i class="fa fa-trash" aria-hidden="true"></i> delete
+                            </a>
+                            <a class="action-button detail-button" href="shows.html?id=${d.id}">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i> lihat
+                            </a>
+                        </td>
+                        ${Object.keys(d).map(key => `<td>${d[key]}</td>`).join('')}
+                        </tr>`;
+                }).join('');
+            })
         }
     })
 
